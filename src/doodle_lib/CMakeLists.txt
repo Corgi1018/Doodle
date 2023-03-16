@@ -66,13 +66,14 @@ target_link_libraries(doodle_lib
         Boost::contract
         nlohmann_json nlohmann_json::nlohmann_json
         ${OpenCV_LIBS}
+        opencv_ml opencv_dnn opencv_core opencv_flann
         EnTT::EnTT
         spdlog::spdlog
         sqlpp11::sqlite3
         sqlpp11::sqlpp11
         imgui::imgui
         range-v3 range-v3-meta range-v3::meta range-v3-concepts
-        cryptopp-static
+        cryptopp::cryptopp
 
         PRIVATE
         d3d11.lib

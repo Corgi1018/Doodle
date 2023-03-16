@@ -82,7 +82,7 @@ target_link_libraries(
         EnTT::EnTT
         spdlog::spdlog
         range-v3 range-v3-meta range-v3::meta range-v3-concepts
-        cryptopp-static
+        cryptopp::cryptopp
         sqlpp11::sqlite3
         sqlpp11::sqlpp11
         WIL::WIL
@@ -95,6 +95,7 @@ target_link_libraries(
 target_compile_definitions(doodle_core
         PUBLIC
         WIN32_LEAN_AND_MEAN
+        _WIN32_WINNT=0x0A00
         $<$<CONFIG:Debug>:SPDLOG_ACTIVE_LEVEL=1>
         $<$<STREQUAL:$<TARGET_PROPERTY:doodle_core,TYPE>,STATIC_LIBRARY>:DOODLE_CORE_STATIC_DEFINE>
         PRIVATE
